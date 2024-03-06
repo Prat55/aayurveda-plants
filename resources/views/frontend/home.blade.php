@@ -21,6 +21,7 @@
                 <li><a href="{{ route('user.register') }}">Register</a></li>
             </ul>
         </div>
+
         <div class="title">
             <h1>Importance Of Ayurveda</h1>
             <p class="description">

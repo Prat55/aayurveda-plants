@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UserInformation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
-Route::get('/register', function () {
+Route::get('/register/information', function () {
     return view('frontend.register');
 })->name('user.register');
 
@@ -29,4 +30,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/add/plant', function () {
+        return view('frontend.add-plant');
+    })->name('add-plant');
 });
