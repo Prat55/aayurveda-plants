@@ -38,7 +38,11 @@
             <a href="#" class="btn">Diseses</a>
         </div>
         <div class="button1">
-            <a wire:navigate href="{{ route('login') }}" class="btn1">Login</a>
+            @auth
+                <a wire:navigate href="{{ route('dashboard') }}" class="btn1">Dashboard</a>
+            @else
+                <a wire:navigate href="{{ route('login') }}" class="btn1">Login</a>
+            @endauth
         </div>
     </header>
 </body>

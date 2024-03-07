@@ -46,8 +46,11 @@
                     </td>
                 </tr>
             @endforelse
+            <tr>
+                <td colspan="3" scope="row"
+                    class="px-6 py-4 font-medium text-center text-gray-900 whitespace-nowrap">
+                    {{ $userinformations->links() }}</td>
+            </tr>
         </tbody>
-
-        {{ $userinformations->links() }}
     </table>
 </div>
