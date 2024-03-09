@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Plant;
 use App\Models\UserInformation;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('frontend.home');
+});
+
+Route::get('/plants', function () {
+    return view('frontend.plants', [
+        'plants' => Plant::latest()->get()
+    ]);
+})->name('plants');
+
+Route::get('/plant/{id}/{name}', function ($id) {
+    return view('frontend.plant', [
+        'plant' => Plant::where('token', $id)->first()
+    ]);
 });
 
 Route::get('/register/information', function () {

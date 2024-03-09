@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>aayurveda</title>
+    <title>Aayurveda</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('user-assets/css/style.css') }}" />
 </head>
 
@@ -16,7 +16,7 @@
             <ul>
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="#">Medicine</a></li>
-                <li><a href="#">Plants</a></li>
+                <li><a href="{{ route('plants') }}">Plants</a></li>
                 <li><a href="#">Diseses</a></li>
                 <li><a href="{{ route('user.register') }}">Register</a></li>
             </ul>
