@@ -27,6 +27,20 @@ class Plant extends Model
     {
         return Str::limit(strip_tags($this->uses), 20);
     }
+
+    public function getShortLName()
+    {
+        return Str::limit(strip_tags($this->local_name), 20);
+    }
+    public function getShortRoot()
+    {
+        return Str::limit(strip_tags($this->root), 20);
+    }
+    public function getShortStem()
+    {
+        return Str::limit(strip_tags($this->stem), 20);
+    }
+
     public function getShortLeaves()
     {
         return Str::limit(strip_tags($this->leaves), 20);

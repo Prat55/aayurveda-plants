@@ -23,7 +23,7 @@
     @livewireStyles
 </head>
 
-<body style="padding: 0 20px 0 20px ">
+<body style="padding: 0 20px 0 20px">
     <nav class="flex py-5" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center">
@@ -43,7 +43,7 @@
         </ol>
     </nav>
 
-    <div class="flex flex-wrap w-full gap-4 px-2 py-3">
+    <div class="flex flex-wrap w-full gap-4 px-2 py-3" style="justify-content: center">
         @forelse ($plants as $plant)
             @php
                 $plantName = Str::replace(' ', '_', Str::lower($plant->local_name));
