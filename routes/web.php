@@ -20,21 +20,29 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
+// ?Plant routes
 Route::get('/plants', function () {
     return view('frontend.plants', [
         'plants' => Plant::latest()->get()
     ]);
 })->name('plants');
 
+Route::get('/plant/{token}/{name}', function ($token) {
+    return view('frontend.plant', [
+        'plant' => Plant::where('token', $token)->first()
+    ]);
+});
+
+// ?Medicine routes
 Route::get('/medicines', function () {
     return view('frontend.medicines', [
         'medicines' => Medicine::latest()->get()
     ]);
 })->name('medicines');
 
-Route::get('/plant/{token}/{name}', function ($token) {
-    return view('frontend.plant', [
-        'plant' => Plant::where('token', $token)->first()
+Route::get('/medicine/{token}/{name}', function ($token) {
+    return view('frontend.medicine', [
+        'medicine' => Medicine::where('token', $token)->first()
     ]);
 });
 

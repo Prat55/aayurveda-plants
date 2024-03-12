@@ -70,7 +70,7 @@
                 </div>
             </a>
         @empty
-            <div class="text-center">No plant added.</div>
+            <div class="text-center">Not found!</div>
         @endforelse
     </div>
 

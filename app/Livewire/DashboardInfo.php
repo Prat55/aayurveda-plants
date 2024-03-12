@@ -30,11 +30,6 @@ class DashboardInfo extends Component
                 ->orWhere('email', 'like', "%{$this->search}%")
                 ->orWhere('phone', 'like', "%{$this->search}%")
                 ->paginate(10),
-
-            'plants' => Plant::latest()
-                ->where('local_name', 'like', "%{$this->search}%")
-                ->orWhere('scientific_name', 'like', "%{$this->search}%")
-                ->paginate(10),
         ]);
     }
 }

@@ -3,14 +3,19 @@
 namespace App\Livewire;
 
 use App\Models\Plant;
+use Livewire\Attributes\Computed;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class AddPlant extends Component
 {
 
     use WithFileUploads;
+    use WithPagination;
 
 
     #[Rule('required|max:195')]
@@ -41,6 +46,15 @@ class AddPlant extends Component
     public $uses;
 
     public $plant_token;
+
+    #[Url()]
+    public $search;
+
+    #[On('search')]
+    public function updateSearch($search)
+    {
+        $this->search = $search;
+    }
 
     public function plant_token()
     {
@@ -78,6 +92,22 @@ class AddPlant extends Component
             'image',
             'uses',
         );
+    }
+
+    public function remove(int $id)
+    {
+        $item = Plant::findOrFail($id);
+        $item->delete();
+        return redirect()->back()->with('success', 'Plant removed successfully');
+    }
+
+    #[Computed()]
+    public function plants()
+    {
+        return Plant::latest()
+            ->where('local_name', 'like', "%{$this->search}%")
+            ->orWhere('scientific_name', 'like', "%{$this->search}%")
+            ->paginate(10);
     }
 
     public function render()

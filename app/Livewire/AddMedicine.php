@@ -3,13 +3,19 @@
 namespace App\Livewire;
 
 use App\Models\Medicine;
+use Livewire\Attributes\Computed;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class AddMedicine extends Component
 {
     use WithFileUploads;
+
+    use WithPagination;
 
     #[Rule('required|max:195')]
     public $tablet_name;
@@ -30,6 +36,15 @@ class AddMedicine extends Component
     public $image = null;
 
     public $medicine_token;
+
+    #[Url()]
+    public $search;
+
+    #[On('search')]
+    public function updateSearch($search)
+    {
+        $this->search = $search;
+    }
 
     public function medicine_token()
     {
@@ -64,6 +79,22 @@ class AddMedicine extends Component
             'use',
             'image',
         );
+    }
+
+    public function remove(int $id)
+    {
+        $item = Medicine::findOrFail($id);
+        $item->delete();
+        return redirect()->back()->with('success', 'Item removed successfully');
+    }
+
+    #[Computed()]
+    public function medicines()
+    {
+        return Medicine::latest()
+            ->where('tablet_name', 'like', "%{$this->search}%")
+            ->orWhere('where_to_get', 'like', "%{$this->search}%")
+            ->paginate(10);
     }
 
     public function render()
