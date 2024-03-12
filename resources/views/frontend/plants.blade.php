@@ -43,7 +43,7 @@
         </ol>
     </nav>
 
-    <div class="flex flex-wrap w-full gap-4 px-2 py-3">
+    <div class="flex flex-wrap justify-center w-full gap-4 px-2 py-3">
         @forelse ($plants as $plant)
             @php
                 $plantName = Str::replace(' ', '_', Str::lower($plant->local_name));

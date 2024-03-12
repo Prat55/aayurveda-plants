@@ -15,7 +15,7 @@
 
             <ul>
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="#">Medicine</a></li>
+                <li><a href="{{ route('medicines') }}">Medicine</a></li>
                 <li><a href="{{ route('plants') }}">Plants</a></li>
                 <li><a href="#">Diseses</a></li>
                 <li><a href="{{ route('user.register') }}">Register</a></li>

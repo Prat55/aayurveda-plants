@@ -18,6 +18,9 @@
                     <x-nav-link href="{{ route('add-plant') }}" :active="request()->routeIs('add-plant')">
                         {{ __('Add Plant') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('add-medicine') }}" :active="request()->routeIs('add-medicine')">
+                        {{ __('Add Medicine') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -159,6 +162,10 @@
 
             <x-responsive-nav-link href="{{ route('add-plant') }}" :active="request()->routeIs('add-plant')">
                 {{ __('Add Plant') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="{{ route('add-medicine') }}" :active="request()->routeIs('add-medicine')">
+                {{ __('Add Medicine') }}
             </x-responsive-nav-link>
         </div>
 

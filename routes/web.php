@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Medicine;
 use App\Models\Plant;
 use App\Models\UserInformation;
 use Illuminate\Support\Facades\Route;
@@ -25,9 +26,15 @@ Route::get('/plants', function () {
     ]);
 })->name('plants');
 
-Route::get('/plant/{id}/{name}', function ($id) {
+Route::get('/medicines', function () {
+    return view('frontend.medicines', [
+        'medicines' => Medicine::latest()->get()
+    ]);
+})->name('medicines');
+
+Route::get('/plant/{token}/{name}', function ($token) {
     return view('frontend.plant', [
-        'plant' => Plant::where('token', $id)->first()
+        'plant' => Plant::where('token', $token)->first()
     ]);
 });
 
@@ -44,7 +51,13 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/add/plant', function () {
-        return view('frontend.add-plant');
-    })->name('add-plant');
+    Route::group(['prefix' => 'add'], function () {
+        Route::get('plant', function () {
+            return view('backend.add-plant');
+        })->name('add-plant');
+
+        Route::get('medicine', function () {
+            return view('backend.add-medicine');
+        })->name('add-medicine');
+    });
 });
