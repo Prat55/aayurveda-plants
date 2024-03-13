@@ -187,7 +187,7 @@
                             </button>
                             <button
                                 class="px-4 py-2 font-semibold text-white bg-red-500 border border-gray-400 rounded shadow hover:bg-red-300"
-                                wire:click='remove({{ $plant->id }})'>
+                                x-on:click="$('{{ $plant->token }}').toggleClass('hidden')">
                                 Remove
                             </button>
                         </td>
@@ -195,7 +195,24 @@
 
                     <div class="absolute top-0 hidden w-full h-full" id="{{ $plant->token }}">
                         <div class="w-full bg-white">
-
+                            <div class="text-center">
+                                <i class="fa fa-info"></i>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-black">Are you sure you want to remove</h4>
+                            </div>
+                            <div class="flex justify-end gap-5">
+                                <button
+                                    class="px-4 py-2 font-semibold text-white bg-red-500 border border-gray-400 rounded shadow hover:bg-red-300"
+                                    wire:click='remove({{ $plant->id }})'>
+                                    Remove
+                                </button>
+                                <button
+                                    class="px-4 py-2 font-semibold text-white bg-red-500 border border-gray-400 rounded shadow hover:bg-red-300"
+                                    wire:click='remove({{ $plant->id }})'>
+                                    Remove
+                                </button>
+                            </div>
                         </div>
                     </div>
                 @empty
