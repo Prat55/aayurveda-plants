@@ -58,7 +58,7 @@
                 src="{{ asset('storage/' . $medicine->medicine_img) }}" alt="{{ $medicine->tablet_name }}">
             <div class="px-2 py-4 leading-normal">
                 <span class="py-1 font-semibold">
-                    Tablet Name:&nbsp;
+                    Medicine Name:&nbsp;
                 </span>
                 <span>{{ $medicine->tablet_name ?: '-' }}</span><br>
 

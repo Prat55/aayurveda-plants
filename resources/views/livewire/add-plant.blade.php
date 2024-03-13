@@ -157,7 +157,7 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="relative">
                 <tr wire:loading class="bg-white border-b hover:bg-gray-50 ">
                     <td colspan="3" scope="row"
                         class="px-6 py-4 font-medium text-center text-gray-900 whitespace-nowrap">
@@ -186,12 +186,18 @@
                                 Edit
                             </button>
                             <button
-                                class="px-4 py-2 font-semibold text-gray-800 bg-red-300 border border-gray-400 rounded shadow hover:bg-red-400"
+                                class="px-4 py-2 font-semibold text-white bg-red-500 border border-gray-400 rounded shadow hover:bg-red-300"
                                 wire:click='remove({{ $plant->id }})'>
                                 Remove
                             </button>
                         </td>
                     </tr>
+
+                    <div class="absolute top-0 hidden w-full h-full" id="{{ $plant->token }}">
+                        <div class="w-full bg-white">
+
+                        </div>
+                    </div>
                 @empty
                     <tr class="bg-white border-b hover:bg-gray-50 ">
                         <td colspan="3" scope="row"

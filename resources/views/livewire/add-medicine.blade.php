@@ -3,7 +3,7 @@
         <div class="flex flex-wrap -mx-3">
             <div class="w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-plant-name">
-                    Tablet Name <span class="text-red-500">*</span>
+                    Tablet/Medicine/Cream/Gel Name <span class="text-red-500">*</span>
                 </label>
                 <input
                     class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
@@ -68,7 +68,7 @@
         <div class="flex flex-wrap mb-2 -mx-3">
             <div class="w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-plant-img">
-                    Plant Image <span class="text-red-500">*</span>
+                    Medicine Image <span class="text-red-500">*</span>
                 </label>
                 <input
                     class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"

@@ -54,7 +54,7 @@
                     style="height: 250px;width:350px">
                 <div class="px-2 py-4 leading-normal">
                     <span class="py-1 font-semibold">
-                        Tablet Name:&nbsp;
+                        Medicine Name:&nbsp;
                     </span>
                     <span>{{ $medicine->tablet_name ?: '-' }}</span><br>
 

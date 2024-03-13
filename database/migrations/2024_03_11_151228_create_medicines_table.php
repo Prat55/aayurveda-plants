@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('token');
             $table->string('tablet_name');
             $table->text('use');
-            $table->string('ingrediency')->nullable();
-            $table->string('where_to_get')->nullable();
+            $table->text('ingrediency')->nullable();
+            $table->text('where_to_get')->nullable();
             $table->text('medicine_img');
-            $table->string('note')->nullable();
+            $table->text('note')->nullable();
 
             $table->timestamps();
         });
