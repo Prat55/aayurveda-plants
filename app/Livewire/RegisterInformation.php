@@ -9,7 +9,7 @@ use Livewire\Component;
 class RegisterInformation extends Component
 {
 
-    #[Rule('required|min:2')]
+    #[Rule('required|min:2|max:10')]
     public $name;
 
     #[Rule('required|email|unique:user_information')]

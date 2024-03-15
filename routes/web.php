@@ -27,7 +27,7 @@ Route::get('/plants', function () {
     ]);
 })->name('plants');
 
-Route::get('/plant/{token}/{name}', function ($token) {
+Route::get('/plant/{token}', function ($token) {
     return view('frontend.plant', [
         'plant' => Plant::where('token', $token)->first()
     ]);
@@ -40,7 +40,7 @@ Route::get('/medicines', function () {
     ]);
 })->name('medicines');
 
-Route::get('/medicine/{token}/{name}', function ($token) {
+Route::get('/medicine/{token}', function ($token) {
     return view('frontend.medicine', [
         'medicine' => Medicine::where('token', $token)->first()
     ]);

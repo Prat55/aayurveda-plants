@@ -62,19 +62,25 @@
                 </span>
                 <span>{{ $medicine->tablet_name ?: '-' }}</span><br>
 
-                <span class="font-semibold">
-                    Where to get:&nbsp;
-                </span>
-                <span>{{ $medicine->where_to_get ?: '-' }}</span><br>
+                @if ($medicine->where_to_get)
+                    <span class="font-semibold">
+                        Where to get:&nbsp;
+                    </span>
+                    <span>{{ $medicine->where_to_get }}</span><br>
+                @endif
 
-                <span class="font-semibold">Ingrediency:&nbsp;</span>
-                <span>{{ $medicine->ingrediency ?: '-' }}</span><br>
+                @if ($medicine->ingrediency)
+                    <span class="font-semibold">Ingrediency:&nbsp;</span>
+                    <span>{{ $medicine->ingrediency }}</span><br>
+                @endif
 
                 <span class="font-semibold">Use:&nbsp;</span>
                 <span>{{ $medicine->use ?: '-' }}</span><br>
 
-                <span class="font-semibold text-red-500">Note:&nbsp;</span>
-                <span class="text-red-500">{{ $medicine->note ?: '' }}</span><br>
+                @if ($medicine->note)
+                    <span class="font-semibold text-red-500">Note:&nbsp;</span>
+                    <span class="text-red-500">{{ $medicine->note }}</span><br>
+                @endif
             </div>
         </a>
 

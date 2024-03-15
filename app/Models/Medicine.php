@@ -20,6 +20,26 @@ class Medicine extends Model
         'note',
     ];
 
+    public function getShortIngrediency()
+    {
+        return Str::limit(strip_tags($this->ingrediency), 20);
+    }
+
+    public function getShortTN()
+    {
+        return Str::limit(strip_tags($this->tablet_name), 20);
+    }
+
+    public function getShortWTG()
+    {
+        return Str::limit(strip_tags($this->where_to_get), 20);
+    }
+
+    public function getShortNote()
+    {
+        return Str::limit(strip_tags($this->note), 20);
+    }
+
     public function getShortUse()
     {
         return Str::limit(strip_tags($this->use), 20);

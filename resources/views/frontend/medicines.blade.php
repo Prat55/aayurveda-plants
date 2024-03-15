@@ -42,41 +42,7 @@
         </ol>
     </nav>
 
-    <div class="flex flex-wrap justify-center w-full gap-4 px-2 py-3">
-        @forelse ($medicines as $medicine)
-            @php
-                $medicineName = Str::replace(' ', '_', Str::lower($medicine->tablet_name));
-            @endphp
-            <a href="/medicine/{{ $medicine->token }}/{{ $medicineName }}"
-                class="items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700">
-                <img class="object-cover w-full rounded-t-lg md:rounded-none md:rounded-s-lg"
-                    src="{{ asset('storage/' . $medicine->medicine_img) }}" alt="{{ $medicine->tablet_name }}"
-                    style="height: 250px;width:350px">
-                <div class="px-2 py-4 leading-normal">
-                    <span class="py-1 font-semibold">
-                        Medicine Name:&nbsp;
-                    </span>
-                    <span>{{ $medicine->tablet_name ?: '-' }}</span><br>
-
-                    <span class="font-semibold">
-                        Where to get:&nbsp;
-                    </span>
-                    <span>{{ $medicine->where_to_get ?: '-' }}</span><br>
-
-                    <span class="font-semibold">Ingrediency:&nbsp;</span>
-                    <span>{{ $medicine->ingrediency ?: '-' }}</span><br>
-
-                    <span class="font-semibold">Use:&nbsp;</span>
-                    <span>{{ $medicine->getShortUse() ?: '-' }}</span><br>
-
-                    <span class="font-semibold text-red-500">Note:&nbsp;</span>
-                    <span class="text-red-500">{{ $medicine->note ?: '' }}</span><br>
-                </div>
-            </a>
-        @empty
-            <div class="text-center">Not found!</div>
-        @endforelse
-    </div>
+    <livewire:medicines />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     @livewireScripts

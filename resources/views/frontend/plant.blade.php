@@ -61,9 +61,7 @@
                     Name:&nbsp;</span><span>{{ $plant->scientific_name ?: '-' }}</span><br>
 
                 <span class="font-semibold">Local name:&nbsp;</span><span>{{ $plant->local_name ?: '-' }}</span><br>
-                <span class="font-semibold">Place to find:&nbsp;</span><span>{{ $plant->place ?: '-' }}</span><br>
                 <span class="font-semibold">Root:&nbsp;</span><span>{{ $plant->root ?: '-' }}</span><br>
-                <span class="font-semibold">Stem:&nbsp;</span><span>{{ $plant->stem ?: '-' }}</span><br>
                 <span class="font-semibold">Leaves:&nbsp;</span><span>{{ $plant->leaves ?: '-' }}</span><br>
                 <span class="font-semibold">Flowers:&nbsp;</span><span>{{ $plant->flower ?: '-' }}</span><br>
                 <span class="font-semibold">Use:&nbsp;</span><span>{{ $plant->uses ?: '-' }}</span><br>
