@@ -32,6 +32,9 @@ class AddMedicine extends Component
     #[Rule('required')]
     public $use;
 
+    #[Rule('required')]
+    public $lang;
+
     #[Rule('required|image|max:4028')]
     public $image = null;
 

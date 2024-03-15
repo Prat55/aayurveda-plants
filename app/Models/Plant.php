@@ -21,6 +21,7 @@ class Plant extends Model
         'flower',
         'plant_img',
         'uses',
+        'lang',
     ];
 
     public function getShortUses()

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Medicine;
+use App\Models\Plant;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
@@ -28,11 +29,19 @@ class Medicines extends Component
     }
 
     #[Computed()]
-    public function medicines()
+    public function searchData()
     {
         return Medicine::latest()
             ->where('tablet_name', 'like', "%{$this->search}%")
             ->orWhere('where_to_get', 'like', "%{$this->search}%")
+            ->get();
+    }
+
+    #[Computed()]
+    public function medicines()
+    {
+        return Medicine::latest()
+            ->where('lang', $this->lang)
             ->get();
     }
 

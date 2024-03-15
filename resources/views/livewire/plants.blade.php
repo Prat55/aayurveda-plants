@@ -12,11 +12,33 @@
                 wire:click="setLang('hin')">Hindi</button>
         </div>
 
-        @if ($search)
-            Searching result for {{ $search }}
-        @endif
+        <div class="relative">
+            <livewire:search />
 
-        <livewire:search />
+            @if ($search)
+                <div class="absolute top-0 right-0 w-full p-2 overflow-y-scroll bg-white rounded shadow"
+                    style="height: 300px;overflow-y:scroll">
+                    Searching {{ $search }}
+
+                    @forelse ($this->searchData as $item)
+                        <a href="/plant/{{ $item->token }}">
+                            <div class="flex items-center py-2">
+                                <div class="mx-2 shadow">
+                                    <img src="{{ asset('storage/' . $item->plant_img) }}" alt="{{ $item->local_name }}"
+                                        height="50px" width="50px">
+                                </div>
+
+                                <div class="w-full text-center">
+                                    <h2>{{ $item->getShortLName() }}</h2>
+                                </div>
+                            </div>
+                        </a>
+                    @empty
+                        <h2>No items found!</h2>
+                    @endforelse
+                </div>
+            @endif
+        </div>
     </div>
 
     <div class="flex flex-wrap justify-center w-full gap-4 px-2 py-3">

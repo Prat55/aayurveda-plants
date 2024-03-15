@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('flower')->nullable();
             $table->text('plant_img');
             $table->text('uses');
+            $table->string('lang', 50)->default('eng');
 
             $table->timestamps();
         });

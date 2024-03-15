@@ -66,16 +66,31 @@
         </div>
 
         <div class="flex flex-wrap mb-2 -mx-3">
-            <div class="w-1/2 px-3 mb-6 md:mb-0">
-                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-plant-img">
-                    Medicine Image <span class="text-red-500">*</span>
-                </label>
-                <input
-                    class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-plant-img" type="file" wire:model="image">
-                @error('medicine_img')
-                    <p class="text-xs italic text-red-500">Please fill out this field.</p>
-                @enderror
+            <div class="flex w-1/2 px-3 mb-6 md:mb-0">
+                <div class="w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                        for="grid-plant-img">
+                        Medicine Image <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                        class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-plant-img" type="file" wire:model="image">
+                    @error('medicine_img')
+                        <p class="text-xs italic text-red-500">Please fill out this field.</p>
+                    @enderror
+                </div>
+                <div class="w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-lang">
+                        Language
+                    </label>
+                    <select name="lang" id="lang"
+                        class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                        wire:model="lang">
+                        <option value="eng">English</option>
+                        <option value="mar">Marathi</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
             </div>
             <div class="w-1/2 px-3 mb-6 md:mb-0">
                 <div class="flex items-center justify-center">

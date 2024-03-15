@@ -28,11 +28,19 @@ class Plants extends Component
     }
 
     #[Computed()]
-    public function plants()
+    public function searchData()
     {
         return Plant::latest()
             ->where('local_name', 'like', "%{$this->search}%")
             ->orWhere('scientific_name', 'like', "%{$this->search}%")
+            ->get();
+    }
+
+    #[Computed()]
+    public function plants()
+    {
+        return Plant::latest()
+            ->where('lang', $this->lang)
             ->get();
     }
     public function render()

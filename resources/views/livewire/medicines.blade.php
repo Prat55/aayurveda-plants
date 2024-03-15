@@ -1,5 +1,5 @@
 <div>
-    <div class="flex items-center justify-between w-full">
+    <div class="flex items-center justify-between w-full ">
         <div class="flex items-center gap-5 space-x-4 font-light">
             <button class="px-2 {{ $lang === 'eng' ? 'text-gray-900 border-b border-black' : 'text-gray-500' }} py-4"
                 wire:click="setLang('eng')">
@@ -17,11 +17,33 @@
             </button>
         </div>
 
-        @if ($search)
-            Searching {{ $search }}
-        @endif
+        <div class="relative">
+            <livewire:search />
 
-        <livewire:search />
+            @if ($search)
+                <div class="absolute top-0 right-0 bg-white h-[200px] overflow-scroll p-2 shadow rounded w-full"
+                    style="height: 300px;overflow-y:scroll">
+                    Searching {{ $search }}
+
+                    @forelse ($this->searchData as $item)
+                        <a href="/medicine/{{ $item->token }}">
+                            <div class="flex items-center py-2">
+                                <div class="mx-2 shadow">
+                                    <img src="{{ asset('storage/' . $item->medicine_img) }}"
+                                        alt="{{ $item->tablet_name }}" height="50px" width="50px">
+                                </div>
+
+                                <div class="w-full text-center">
+                                    <h2>{{ $item->getShortTN() }}</h2>
+                                </div>
+                            </div>
+                        </a>
+                    @empty
+                        <h2>No items found!</h2>
+                    @endforelse
+                </div>
+            @endif
+        </div>
     </div>
 
     <div class="flex flex-wrap justify-center w-full gap-4 px-2 py-3">

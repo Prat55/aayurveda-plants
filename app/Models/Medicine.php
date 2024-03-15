@@ -18,6 +18,7 @@ class Medicine extends Model
         'where_to_get',
         'medicine_img',
         'note',
+        'lang'
     ];
 
     public function getShortIngrediency()

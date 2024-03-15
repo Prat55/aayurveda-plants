@@ -45,6 +45,9 @@ class AddPlant extends Component
     #[Rule('required')]
     public $uses;
 
+    #[Rule('required')]
+    public $lang;
+
     public $plant_token;
 
     #[Url()]

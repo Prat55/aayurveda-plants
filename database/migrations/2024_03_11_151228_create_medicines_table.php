@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('where_to_get')->nullable();
             $table->text('medicine_img');
             $table->text('note')->nullable();
+            $table->string('lang', 50)->default('eng');
 
             $table->timestamps();
         });
