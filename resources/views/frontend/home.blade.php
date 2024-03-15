@@ -17,7 +17,16 @@
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="{{ route('medicines') }}">Medicine</a></li>
                 <li><a href="{{ route('plants') }}">Plants</a></li>
-                <li><a href="#">Diseses</a></li>
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-btn">Diseses</a>
+
+                    <ul class="dropdown-link">
+                        <li><a href="#">Acidity</a></li>
+                        <li><a href="#">Diabetes</a></li>
+                        <li><a href="#">Heart Disease</a></li>
+                        <li><a href="#">Joint Pain</a></li>
+                    </ul>
+                </li>
                 <li><a href="{{ route('user.register') }}">Register</a></li>
             </ul>
         </div>

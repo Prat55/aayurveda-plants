@@ -138,3 +138,29 @@ ul li.active a {
         padding: 10px 10px 10px 10px;
     }
 }
+
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-link {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute !important;
+    height: auto;
+    width: auto;
+    z-index: 100;
+    display: none;
+    top: 0;
+}
+
+.dropdown-link li {
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.has-dropdown:hover .dropdown-link {
+    display: block;
+}
