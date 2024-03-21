@@ -21,10 +21,10 @@
                     <a href="#" class="dropdown-btn">Diseses</a>
 
                     <ul class="dropdown-link">
-                        <li><a href="#">Stomach Disease</a></li>
-                        <li><a href="#">Diabetes</a></li>
-                        <li><a href="#">Heart Disease</a></li>
-                        <li><a href="#">Joint Pain</a></li>
+                        <li><a href="{{ route('stomach_disease') }}">Stomach Disease</a></li>
+                        <li><a href="{{ route('diabeties') }}">Diabetes</a></li>
+                        <li><a href="{{ route('heart_disease') }}">Heart Disease</a></li>
+                        <li><a href="{{ route('jointpain') }}">Joint Pain</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('user.register') }}">Register</a></li>

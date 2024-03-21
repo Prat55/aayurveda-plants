@@ -59,14 +59,71 @@
                     src="{{ asset('storage/' . $plant->plant_img) }}" alt="{{ $plant->scientific_name }}">
             </div>
             <div class="px-2 py-4 leading-normal rounded md:w-full md:px-0">
-                <span class="py-1 font-semibold">Scientific
-                    Name:&nbsp;</span><span>{{ $plant->scientific_name ?: '-' }}</span><br>
+                <span class="py-1 font-semibold">
+                    @if ($plant->lang == 'mar')
+                        वैज्ञानिक नाव
+                    @elseif ($plant->lang == 'hin')
+                        वैज्ञानिक नाम
+                    @else
+                        Scientific Name
+                    @endif:&nbsp;
+                </span>
+                <span>{{ $plant->scientific_name ?: '-' }}</span><br>
 
-                <span class="font-semibold">Local name:&nbsp;</span><span>{{ $plant->local_name ?: '-' }}</span><br>
-                <span class="font-semibold">Root:&nbsp;</span><span>{{ $plant->root ?: '-' }}</span><br>
-                <span class="font-semibold">Leaves:&nbsp;</span><span>{{ $plant->leaves ?: '-' }}</span><br>
-                <span class="font-semibold">Flowers:&nbsp;</span><span>{{ $plant->flower ?: '-' }}</span><br>
-                <span class="font-semibold">Use:&nbsp;</span><span>{{ $plant->uses ?: '-' }}</span><br>
+                <span class="font-semibold">
+                    @if ($plant->lang == 'mar')
+                        स्थानिक नाव
+                    @elseif ($plant->lang == 'hin')
+                        स्थानीय नाम
+                    @else
+                        Local Name
+                    @endif:&nbsp;
+                </span>
+                <span>{{ $plant->local_name ?: '-' }}</span><br>
+
+                <span class="font-semibold">
+                    @if ($plant->lang == 'mar')
+                        जड
+                    @elseif ($plant->lang == 'hin')
+                        जड़
+                    @else
+                        Root
+                    @endif:&nbsp;:&nbsp;
+                </span>
+                <span>{{ $plant->root ?: '-' }}</span><br>
+
+                <span class="font-semibold">
+                    @if ($plant->lang == 'mar')
+                        पाने
+                    @elseif ($plant->lang == 'hin')
+                        पत्तियाँ
+                    @else
+                        Leaves
+                    @endif:&nbsp;
+                </span>
+                <span>{{ $plant->leaves ?: '-' }}</span><br>
+
+                <span class="font-semibold">
+                    @if ($plant->lang == 'mar')
+                        फूल
+                    @elseif ($plant->lang == 'hin')
+                        फूल
+                    @else
+                        Flowers
+                    @endif:&nbsp;
+                </span>
+                <span>{{ $plant->flower ?: '-' }}</span><br>
+
+                <span class="font-semibold">
+                    @if ($plant->lang == 'mar')
+                        वापर
+                    @elseif ($plant->lang == 'hin')
+                        उपयोग
+                    @else
+                        Use
+                    @endif:&nbsp;
+                </span>
+                <span>{{ $plant->uses ?: '-' }}</span><br>
             </div>
         </a>
 

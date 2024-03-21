@@ -1,6 +1,6 @@
 <div>
-    <div class="flex items-center justify-between w-full ">
-        <div class="flex items-center gap-5 space-x-4 font-light">
+    <div class="flex items-center justify-end w-full ">
+        {{-- <div class="flex items-center gap-5 space-x-4 font-light">
             <button class="px-2 {{ $lang === 'eng' ? 'text-gray-900 border-b border-black' : 'text-gray-500' }} py-4"
                 wire:click="setLang('eng')">
                 English
@@ -15,7 +15,7 @@
                 wire:click="setLang('hin')">
                 Hindi
             </button>
-        </div>
+        </div> --}}
 
         <div class="relative">
             <livewire:search />
@@ -55,13 +55,7 @@
                     style="height: 250px;width:350px">
                 <div class="px-2 py-4 leading-normal">
                     <span class="py-1 font-semibold">
-                        @if ($this->lang == 'mar')
-                            वैज्ञानिक नाव
-                        @elseif ($this->lang == 'hin')
-                            वैज्ञानिक नाम
-                        @else
-                            Medicine Name
-                        @endif:&nbsp;
+                        Medicine Name:&nbsp;
                     </span>
                     <span>{{ $medicine->getShortTN() ?: '-' }}</span><br>
 

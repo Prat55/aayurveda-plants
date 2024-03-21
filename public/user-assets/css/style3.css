@@ -3,9 +3,18 @@
     height: 650px;
 }
 
+#container {
+    padding: 10px 80px 10px 80px !important;
+}
+
+/*? Responsive Layout ?*/
 @media only screen and (max-width: 768px) {
     #image-box2 {
         flex-direction: column;
         height: auto;
+    }
+
+    #container {
+        padding: 5px 20px 5px 20px !important;
     }
 }

@@ -33,6 +33,24 @@ Route::get('/plant/{token}', function ($token) {
     ]);
 });
 
+Route::group(['prefix' => 'disease'], function () {
+    Route::get('/stomach-disease', function () {
+        return view('frontend.stomach-disease');
+    })->name('stomach_disease');
+
+    Route::get('/diabeties', function () {
+        return view('frontend.diabeties');
+    })->name('diabeties');
+
+    Route::get('/heart-disease', function () {
+        return view('frontend.heart-disease');
+    })->name('heart_disease');
+
+    Route::get('/joint-pain', function () {
+        return view('frontend.jointpain');
+    })->name('jointpain');
+});
+
 // ?Medicine routes
 Route::get('/medicines', function () {
     return view('frontend.medicines', [
