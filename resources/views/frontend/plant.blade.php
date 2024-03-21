@@ -15,7 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> --}}
 
-
+    <link rel="stylesheet" href="{{ asset('user-assets/css/style3.css') }}">
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -52,11 +52,13 @@
 
     <div class="flex w-full gap-4 px-3 py-3" id="image-box">
 
-        <a
-            class="items-center w-full overflow-hidden bg-white border border-gray-200 rounded-lg shadow md:max-w-xl hover:bg-gray-100 dark:border-gray-700">
-            <img class="object-cover w-full overflow-hidden rounded-t-lg md:rounded-none md:rounded-s-lg"
-                src="{{ asset('storage/' . $plant->plant_img) }}" alt="{{ $plant->scientific_name }}">
-            <div class="px-2 py-4 leading-normal">
+        <a class="items-center w-full px-2 overflow-hidden bg-white border border-gray-200 rounded-lg shadow md:max-w-xl hover:bg-gray-100 dark:border-gray-700"
+            id="image-box2">
+            <div class="w-1/2 md:w-full ">
+                <img class="object-cover w-full overflow-hidden rounded-t-lg md:rounded-none md:rounded-s-lg"
+                    src="{{ asset('storage/' . $plant->plant_img) }}" alt="{{ $plant->scientific_name }}">
+            </div>
+            <div class="px-2 py-4 leading-normal rounded md:w-full md:px-0">
                 <span class="py-1 font-semibold">Scientific
                     Name:&nbsp;</span><span>{{ $plant->scientific_name ?: '-' }}</span><br>
 

@@ -29,7 +29,33 @@
                 @enderror
             </div>
         </div>
+        <div>
+            <label for="disease" class="block text-sm font-medium leading-6 text-gray-900">Name of your disease</label>
+            <div class="mt-2">
+                <input id="disease" name="disease" type="text"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    wire:model="disease">
 
+                @error('disease')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+        <div>
+            <label for="description" class="block text-sm font-medium leading-6 text-gray-900">
+                Brief information of disease
+            </label>
+            <div class="mt-2">
+                <textarea id="description" name="description" type="text"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    wire:model="description">
+                </textarea>
+
+                @error('description')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
         <div>
             <div class="flex items-center justify-between">
                 <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone</label>
@@ -52,6 +78,9 @@
                     <img src="{{ asset('loading/loading2.gif') }}" alt="loader" class="object-cover">
                 </div>
             </button>
+
+            <a class="box-border flex items-center justify-center w-full px-3 py-3 mt-2 text-sm font-semibold leading-6 text-white bg-indigo-600 rounded-md shadow-sm cursor-pointer hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onclick="history.back()">Back</a>
         </div>
     </form>
 </div>

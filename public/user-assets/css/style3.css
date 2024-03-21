@@ -1,0 +1,11 @@
+#image-box2 {
+    display: flex !important;
+    height: 650px;
+}
+
+@media only screen and (max-width: 768px) {
+    #image-box2 {
+        flex-direction: column;
+        height: auto;
+    }
+}

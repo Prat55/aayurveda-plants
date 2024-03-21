@@ -21,7 +21,7 @@
                     <a href="#" class="dropdown-btn">Diseses</a>
 
                     <ul class="dropdown-link">
-                        <li><a href="#">Acidity</a></li>
+                        <li><a href="#">Stomach Disease</a></li>
                         <li><a href="#">Diabetes</a></li>
                         <li><a href="#">Heart Disease</a></li>
                         <li><a href="#">Joint Pain</a></li>
@@ -42,15 +42,13 @@
             </p>
         </div>
         <div class="button">
-            <a href="#" class="btn">Plants</a>
-            <a href="#" class="btn">Medicine</a>
-            <a href="#" class="btn">Diseses</a>
+            <a href="{{ route('plants') }}" class="btn">Plants</a>
+            <a href="{{ route('medicines') }}" class="btn">Medicine</a>
+            {{-- <a href="#" class="btn">Diseses</a> --}}
         </div>
         <div class="button1">
             @auth
                 <a wire:navigate href="{{ route('dashboard') }}" class="btn1">Dashboard</a>
-            @else
-                <a wire:navigate href="{{ route('login') }}" class="btn1">Login</a>
             @endauth
         </div>
     </header>

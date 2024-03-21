@@ -11,6 +11,8 @@ class UserInformation extends Model
     protected $fillable = [
         'name',
         'email',
+        'disease',
+        'description',
         'phone',
     ];
 }

@@ -129,15 +129,7 @@ ul li.active a {
     color: #000;
 }
 
-#image-box {
-    padding: 10px 100px 10px 100px;
-}
 
-@media only screen and (max-width: 768px) {
-    #image-box {
-        padding: 10px 10px 10px 10px;
-    }
-}
 
 .has-dropdown {
     position: relative;
@@ -164,3 +156,5 @@ ul li.active a {
 .has-dropdown:hover .dropdown-link {
     display: block;
 }
+
+

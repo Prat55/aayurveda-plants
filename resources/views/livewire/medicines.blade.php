@@ -22,7 +22,7 @@
 
             @if ($search)
                 <div class="absolute top-0 right-0 bg-white h-[200px] overflow-scroll p-2 shadow rounded w-full"
-                    style="height: 300px;overflow-y:scroll">
+                    style="height: auto;overflow-y:scroll;max-height:300px">
                     Searching {{ $search }}
 
                     @forelse ($this->searchData as $item)
@@ -55,7 +55,13 @@
                     style="height: 250px;width:350px">
                 <div class="px-2 py-4 leading-normal">
                     <span class="py-1 font-semibold">
-                        Medicine Name:&nbsp;
+                        @if ($this->lang == 'mar')
+                            वैज्ञानिक नाव
+                        @elseif ($this->lang == 'hin')
+                            वैज्ञानिक नाम
+                        @else
+                            Medicine Name
+                        @endif:&nbsp;
                     </span>
                     <span>{{ $medicine->getShortTN() ?: '-' }}</span><br>
 

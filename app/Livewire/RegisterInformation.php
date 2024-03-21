@@ -9,13 +9,19 @@ use Livewire\Component;
 class RegisterInformation extends Component
 {
 
-    #[Rule('required|min:2|max:10')]
+    #[Rule('required|min:2|max:20|string')]
     public $name;
 
     #[Rule('required|email|unique:user_information')]
     public $email;
 
-    #[Rule('required|max:10|min:10')]
+    #[Rule('required|min:5')]
+    public $disease;
+
+    #[Rule('required|min:5')]
+    public $description;
+
+    #[Rule('required|max:10|min:10|unique:user_information')]
     public $phone;
 
     public function registerInformation()
@@ -34,6 +40,8 @@ class RegisterInformation extends Component
         $this->reset(
             'name',
             'email',
+            'disease',
+            'description',
             'phone',
         );
     }
